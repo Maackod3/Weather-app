@@ -1,6 +1,6 @@
 const weatherIcons = {
     'Rain': 'wi wi-day-rain',
-    'Clouds': 'wi wi-day-clouds',
+    'Clouds': 'wi wi-cloudy',
     'Clear': 'wi wi-day-sunny',
     'Snow': 'wi wi-day-snow',
     'Mist': 'wi wi-day-fog',
