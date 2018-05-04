@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+.rain {
+    background-color: #183152;
+}
+
+.clouds {
+    background-color: #6191A8;
+}
+
+.clear {
+    background-color: #FFD470;
+}
+
+.snow {
+    background-color: #E4EEF0;
+}
+
+.mist {
+    background-color: #BBCFDA;
+}
+
+.drizzle {
+    background-color: #A6A5A1;
+}
+
+body {
+    font-family: 'PT sans', serif;
+    height: 100%;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #5E3F50;
+    display: flex;
+    background-size: auto;
+    background-position: center;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+
+i {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
