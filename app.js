@@ -20,30 +20,30 @@ const weatherAPI = 'https://fcc-weather-api.glitch.me/api/current?lon=:longitude
 
 const getIP = 'https://api.ipify.org?format=json';
 
-const geoIP = 'http://api.ipstack.com/ ?access_key=d30b17e12bfe94d85a9970e10110b6f6';
+const geoIP = 'http://api.ipstack.com/?access_key=d30b17e12bfe94d85a9970e10110b6f6';
 
 function capitalize(str) {
     return str[0].toUpperCase() + str.slice(1);
 }
 
 async function main() {
-   const ip = await fetch(getIP).then(response => response.json()).then(json => json.ip);
+    const ip = await fetch(getIP).then(response => response.json()).then(json => json.ip);
 
-   const lng = await fetch(`http://api.ipstack.com/${ip}?access_key=d30b17e12bfe94d85a9970e10110b6f6`).then(response => response.json()).then(json => json.longitude);
+    const lng = await fetch(`http://api.ipstack.com/${ip}?access_key=d30b17e12bfe94d85a9970e10110b6f6`).then(response => response.json()).then(json => json.longitude);
 
-   const ltd = await fetch(`http://api.ipstack.com/${ip}?access_key=d30b17e12bfe94d85a9970e10110b6f6`).then(response => response.json()).then(json => json.latitude);
+    const ltd = await fetch(`http://api.ipstack.com/${ip}?access_key=d30b17e12bfe94d85a9970e10110b6f6`).then(response => response.json()).then(json => json.latitude);
 
-   const meteo = await fetch(`https://fcc-weather-api.glitch.me/api/current?lon=${lng}&lat=${ltd}`).then(response => response.json()).then(json => json);
+    const meteo = await fetch(`https://fcc-weather-api.glitch.me/api/current?lon=${lng}&lat=${ltd}`).then(response => response.json()).then(json => json);
 
-   displayWeather(meteo);
+    displayWeather(meteo);
 
-} 
+}
 
 function displayWeather(data) {
     const name = data.name;
     const temperature = Math.round(data.main.temp);
     const conditions = data.weather[0].main;
-    const fahrenheit = (temperature * (9/5)) + 32;
+    const fahrenheit = (temperature * (9 / 5)) + 32;
 
     document.querySelector('#ville').textContent = name;
     document.querySelector('#temp').textContent = temperature;
@@ -56,9 +56,7 @@ function displayWeather(data) {
             document.querySelector('#temp').textContent = temperature;
         });
     });
-    
+
 }
 
 main();
-
-
